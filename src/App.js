@@ -1,9 +1,12 @@
 import './App.css';
 import Welcome from "./pages/Welcome";
+import PlanLayout from "./pages/Layouts/PlanLayout";
 
 function App() {
   return (
-    <Welcome/>
+    <PlanLayout>
+      <Welcome />
+    </PlanLayout>
   );
 }
 
