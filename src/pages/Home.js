@@ -4,9 +4,10 @@ import DailyInfoCard from "../components/DailyInfoCard";
 import RoomInfoCard from "../components/RoomInfoCard";
 import BottomSheet from "../components/BottomSheet";
 import data from "../data/roomCard.json";
+import newRoomData from "../data/newRoom.json"
 import { AiOutlinePlus } from "react-icons/ai";
 import { BsGrid3X3Gap } from "react-icons/bs";
-import style from "../style/home.module.css";
+import style from "../style/home.module.css"
 
 export default function Home() {
   const [itemsVisible, setItemsVisible] = useState(true);
@@ -49,6 +50,7 @@ export default function Home() {
           <BsGrid3X3Gap />
         </button>
       </div>
+
       <BottomSheet
         sheetTitle="start room"
         setSheetVisible={(item) => setSheetVisible(item)}
@@ -63,6 +65,14 @@ export default function Home() {
           }, 1000);
         }}
       />
+
+      <BottomSheet sheetTitle="new room"
+        setSheetVisible={(item) => setSheetCreateRoom(item)}
+        sheetVisible={sheetCreateRoom}
+        cardDetail = {newRoomData}
+        setItemsVisible={(item) => setItemsVisible(item)}
+      />
+      
     </>
   );
 }
